@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title> List of results from phrase </title>
+    </head>
+
+    <body>
+        <table>
+            <th> Series Id </th>
+            <th> Description </th>
+            {% for key,value in data.items() %}
+            <tr>
+        <td> <a href="{{url_for('get_data', id = key)}}" name='id' value={{key}}> {{key}} </a></td>
+        <td>{{value}} </td>
+            </tr>
+                {% endfor %}
+
+        </table>
+    </body>
+    </html>

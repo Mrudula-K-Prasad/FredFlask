@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title> List of results from phrase </title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+        </script>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+              }
+            </style>
+    </head>
+
+    <body>
+        <table>
+            <th> Date </th>
+            <th> Data </th>
+            {% for key,value in d.items() %}
+            <tr>
+               <td> {{key}} </td>
+               <td> {{value}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        <script>
+            var xlab = []
+            var ylab = []
+            {% for key,value in d.items() %}
+            xlab.push({{key}})
+            ylab.push({{value}})
+            {% endfor %}
+        var myChart = new Chart("myChart", {
+            type: "line",
+            data: {labels: xlab,
+                datasets: [{
+                  backgroundColor: "rgba(0,0,0,1.0)",
+                  borderColor: "rgba(0.1,0,0,0)",
+                  data: ylab
+                }]},
+            options: {}
+          });
+        </script>
+    </body>
+    </html>
