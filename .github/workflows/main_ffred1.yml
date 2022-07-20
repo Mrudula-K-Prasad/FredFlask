@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'FFred1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_52638D0EB6A34A8DB4932901D0D33190 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C4ED558C15E4492E8393E92E8DFFFC17 }}
